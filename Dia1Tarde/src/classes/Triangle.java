@@ -10,7 +10,7 @@ public class Triangle {
 		this.c = c;
 	}
 	
-	public String type()
+	public String getType()
 	{
 		int ammount = 0;
 		if(a == b )
