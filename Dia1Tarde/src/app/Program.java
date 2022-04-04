@@ -11,7 +11,7 @@ public class Program {
 		//Triangle triangle = new Triangle(5,5,5);
 		//System.out.println(triangle.getType());
 		
-		//System.out.println(isPrimeIf());
+		System.out.println(isPrimeIf());
 		//System.out.println(isPrimeSwitch());
 	}
 
@@ -29,6 +29,7 @@ public class Program {
 				
 		System.out.println(" \n Enter a number beetwen 1 and 14: ");
 		number = scan.nextInt();
+		
 		if(number >14 || number < 1)
 			System.out.println("that number doesn't respect the conditions ");
 		
