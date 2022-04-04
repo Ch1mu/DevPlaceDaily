@@ -3,9 +3,9 @@ package app;
 import java.util.Scanner;
 
 import classes.Triangle;
-import ownExcercises.*;
 
-public class Program {
+
+public class Program{
 
 	public static void main(String[] args) {
 		

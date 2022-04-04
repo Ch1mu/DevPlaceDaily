@@ -1,8 +1,11 @@
 package classes;
 
+
+
 public class Triangle {
 
 	private float a,b,c;
+	
 	public  Triangle(float a, float b, float c)
 	{
 		this.a = a;
