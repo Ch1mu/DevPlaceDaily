@@ -11,10 +11,11 @@ public class Program {
 		//Triangle triangle = new Triangle(5,5,5);
 		//System.out.println(triangle.getType());
 		
-		//System.out.println(isPrime());
-
+		//System.out.println(isPrimeIf());
+		//System.out.println(isPrimeSwitch());
 	}
 
+	
 	//2 exercise, prime numbers
 	
 	public static boolean isPrimeIf()
