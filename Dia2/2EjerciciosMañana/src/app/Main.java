@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		//calculator();
-		//lowerCaseLetters();
+		lowerCaseLetters();
 		//numbers();
 	}
 	
@@ -72,22 +72,11 @@ public class Main {
 	//Excercise 2
 	public static void lowerCaseLetters()
 	{
-		char letters[];
-		letters = new char[5];
+	
+		for(int i = 'a'; i<='z'; i++)
+				System.out.print((char)i +"- ");
+			
 		
-		letters[0] = 'a';
-		letters[1] = 'B';
-		letters[2] = 'C';
-		letters[3] = 'd';
-		letters[4] = 'E';
-		
-		for(int i = 0; i<letters.length; i++)
-		{
-			if(letters[i] >=97 && letters[i] <= 122)
-			{
-				System.out.println(letters[i]);
-			}
-		}
 		
 	}
 	
