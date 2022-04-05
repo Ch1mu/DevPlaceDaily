@@ -16,6 +16,7 @@ public class Main {
 
 		ArrayList<Client> clients = new ArrayList<Client>();
 		
+		
 		menu(clients);
 
 	}
@@ -25,6 +26,7 @@ public class Main {
 	
 	public static void menu( ArrayList<Client> clients) 
 	{
+		
 		Scanner scan = new Scanner(System.in);
 		
 		boolean flag = true;
@@ -73,6 +75,9 @@ public class Main {
 		case 6:	
 			flag = false; 
 		break;
+		default: 
+			System.out.println("\n Invalid Option \n");
+			break;
 	
 		
 		}
@@ -88,6 +93,7 @@ public class Main {
 		String name;
 		int ammount;
 		Scanner scan = new Scanner(System.in);
+		
 		System.out.println("\n Ingrese el nombre del cliente");
 		name = scan.nextLine();
 		System.out.println("\n Enter Ammount of products");
@@ -109,6 +115,7 @@ public class Main {
 	{
 		ArrayList<Client>clients = new ArrayList<Client>(clientsOriginal);
 		Client aux;
+		
 		for (int i = 0; i<clients.size(); i++)
 		{
 			for(int j = 0; j<clients.size();j++)
