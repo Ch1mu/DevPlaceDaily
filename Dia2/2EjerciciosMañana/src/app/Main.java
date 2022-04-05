@@ -7,8 +7,8 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		//calculator();
-		lowerCaseLetters();
+		calculator();
+		//lowerCaseLetters();
 		//numbers();
 	}
 	
@@ -16,7 +16,7 @@ public class Main {
 	public static void calculator()
 	{
 		Scanner scan = new Scanner(System.in);
-		String option ;
+		int option ;
 		boolean flag = true;
 		double num1, num2, ans;
 		
@@ -33,28 +33,28 @@ public class Main {
 			System.out.println("- Press [s] to substract -");
 			System.out.println("- Press [d] to divide -");
 			scan.nextLine();
-			option = scan.nextLine();
+			option = scan.next().charAt(0);
 		
 			switch(option)
 			{
 		
 			
-			case "m": ans = num1 * num2; 
+			case 'm': ans = num1 * num2; 
 			System.out.println("The result is: " + ans);
 			flag = false; 
 			break;
 			
-			case "p": ans = num1 + num2; 
+			case 'p': ans = num1 + num2; 
 			System.out.println("The result is: " + ans);
 			flag = false;
 			break;
 			
-			case "s": ans = num1 - num2; 
+			case 's': ans = num1 - num2; 
 			System.out.println("The result is: " + ans);
 			flag = false;
 			break;
 			
-			case "d": ans = num1 / num2;
+			case 'd': ans = num1 / num2;
 			System.out.println("The result is: " + ans);
 			flag = false;
 			break;
