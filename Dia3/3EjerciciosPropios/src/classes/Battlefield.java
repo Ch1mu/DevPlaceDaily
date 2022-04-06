@@ -6,8 +6,15 @@ public class Battlefield {
 	private ArrayList<Sith> siths; //row
 	private ArrayList<Jedi> jedi; //row
 	int sithpoints = 0, jedipoints = 0;
+	String name;
 	public Battlefield()
 	{
+		siths = new ArrayList<Sith>();
+		jedi = new ArrayList<Jedi>();
+	}
+	public Battlefield(String name)
+	{
+		this.name = name;
 		siths = new ArrayList<Sith>();
 		jedi = new ArrayList<Jedi>();
 	}
@@ -16,9 +23,16 @@ public class Battlefield {
 	{
 		siths.add((Sith) character);
 	}
-	public void addJedi(Character character)
+	public void addJedi(Character character) //we wanted to use InstanceOf but we didn't see it yet
 	{
 		jedi.add((Jedi) character);
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public ArrayList getAllJedis()
 	{
@@ -73,6 +87,28 @@ public class Battlefield {
 		{
 			System.out.println("It's a Tie");
 		}
+		System.out.println("                      .-.\r\n"
+				+ "                      |_:_|\r\n"
+				+ "                     /(_Y_)\\\r\n"
+				+ ".                   ( \\/M\\/ )\r\n"
+				+ " '.               _.'-/'-'\\-'._\r\n"
+				+ "   ':           _/.--'[[[[]'--.\\_\r\n"
+				+ "     ':        /_'  : |::\"| :  '.\\\r\n"
+				+ "       ':     //   ./ |oUU| \\.'  :\\\r\n"
+				+ "         ':  _:'..' \\_|___|_/ :   :|\r\n"
+				+ "           ':.  .'  |_[___]_|  :.':\\\r\n"
+				+ "            [::\\ |  :  | |  :   ; : \\\r\n"
+				+ "             '-'   \\/'.| |.' \\  .;.' |\r\n"
+				+ "             |\\_    \\  '-'   :       |\r\n"
+				+ "             |  \\    \\ .:    :   |   |\r\n"
+				+ "             |   \\    | '.   :    \\  |\r\n"
+				+ "             /       \\   :. .;       |\r\n"
+				+ "            /     |   |  :__/     :  \\\\\r\n"
+				+ "           |  |   |    \\:   | \\   |   ||\r\n"
+				+ "          /    \\  : :  |:   /  |__|   /|\r\n"
+				+ "      snd |     : : :_/_|  /'._\\  '--|_\\\r\n"
+				+ "          /___.-/_|-'   \\  \\\r\n"
+				+ "                         '-'");
 	}
 	@Override
 	public String toString() {
