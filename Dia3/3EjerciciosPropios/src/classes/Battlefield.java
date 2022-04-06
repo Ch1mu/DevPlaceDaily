@@ -3,15 +3,19 @@ package classes;
 import java.util.ArrayList;
 
 public class Battlefield {
+	
 	private ArrayList<Sith> siths; //row
 	private ArrayList<Jedi> jedi; //row
+	
 	int sithpoints = 0, jedipoints = 0;
 	String name;
+	
 	public Battlefield()
 	{
 		siths = new ArrayList<Sith>();
 		jedi = new ArrayList<Jedi>();
 	}
+	
 	public Battlefield(String name)
 	{
 		this.name = name;
@@ -42,6 +46,7 @@ public class Battlefield {
 	{
 		return this.siths;
 	}
+	
 	public void nextJedi()
 	{
 		jedi.remove(0);
@@ -50,16 +55,21 @@ public class Battlefield {
 	{
 		siths.remove(0);
 	}
+	
 	public void fight()
 	{
 		if(siths.get(0).getPower()>jedi.get(0).getPower())
 		{
+			System.out.println("-------------------------------------------------------------");
 			System.out.println(siths.get(0).getName() +" Wins");
+			System.out.println("-------------------------------------------------------------");
 			sithpoints++;
 		}
 		else if(siths.get(0).getPower()<jedi.get(0).getPower())
 		{
+			System.out.println("-------------------------------------------------------------");
 			System.out.println(jedi.get(0).getName() +" Wins");
+			System.out.println("-------------------------------------------------------------");
 			jedipoints++;
 		}
 		else
@@ -71,21 +81,28 @@ public class Battlefield {
 
 	public void showPoints()
 	{
-		System.out.println("Jedi: " + jedipoints + "\n Siths: " + sithpoints);
+		System.out.println(" Jedi: " + jedipoints + "\n Siths: " + sithpoints);
 	}
+	
 	public void winner()
 	{
 		if(jedipoints>sithpoints)
 		{
-			System.out.println("Jedis Wins");
+			System.out.println("-------------------------------------------------------------");
+			System.out.println(" Jedis Wins");
+			System.out.println("-------------------------------------------------------------");
 		}
 		if(jedipoints<sithpoints)
 		{
-			System.out.println("Siths Wins");
+			System.out.println("-------------------------------------------------------------");
+			System.out.println(" Siths Wins");
+			System.out.println("-------------------------------------------------------------");
 		}
 		if(jedipoints==sithpoints)
 		{
-			System.out.println("It's a Tie");
+			System.out.println("-------------------------------------------------------------");
+			System.out.println(" It's a Tie");
+			System.out.println("-------------------------------------------------------------");
 		}
 		System.out.println("                      .-.\r\n"
 				+ "                      |_:_|\r\n"

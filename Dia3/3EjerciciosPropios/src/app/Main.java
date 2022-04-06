@@ -16,7 +16,7 @@ public class Main {
 		Jedi jedi2 = new Jedi("Blue", 150,"Anakin Skywalker","Human");
 		Jedi jedi3 = new Jedi("Blue", 100,"Ahsoka","Human");
 		Jedi jedi4 = new Jedi("Green", 180,"Yoda","Unknown");
-		Jedi jedi5 = new Jedi("Laser Gun", 110,"Han solo Kenobi","Human");
+		Jedi jedi5 = new Jedi("Laser Gun", 110,"Han solo","Human");
 		Sith sith1 = new Sith(165, "Darth Vader", "Cyborg");
 		Sith sith2 = new Sith(125, "Palpatine", "Human");
 		Sith sith3 = new Sith(155, "Darth Maul", "Zabrak");
