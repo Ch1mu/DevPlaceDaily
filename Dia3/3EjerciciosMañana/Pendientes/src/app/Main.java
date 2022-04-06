@@ -11,8 +11,8 @@ public class Main {
 		
 		//CountrysAndCities(info, names); //Enter names
 		//printAll(info, names); //view all (names and ids)
-		//Hangman();
-		numbersGame();
+		Hangman();
+		//numbersGame();
 	}
 
 	//Exercise 4
@@ -68,12 +68,14 @@ public class Main {
 	public static void Hangman ()
 	{
 		Scanner scan = new Scanner(System.in);
-		String p1, p2, word, hint;
+		String p1, p2, word ="", hint = "";
 		int op  =6, trys = 0;
 		int i = 0;
 		char letters[] = new char[20];
 		boolean win = false, flag = false;
-	
+		int p1points = 0, p2points = 0;
+		int t = 1
+				;
 		
 		
 		System.out.println("Player one: ");
@@ -81,10 +83,32 @@ public class Main {
 		System.out.println("\n Player two: ");
 		p2 = scan.nextLine();
 		
-			System.out.println("\n Player one enter a WORD: ");
+		if(p1points ==3)
+			System.out.println("Player 1 wins");
+		if(p2points ==3)
+			System.out.println("Player 2 wins");
+		
+		while(p1points < 3 || p2points<3)
+		{
+			
+			
+		
+		if(t == 1)
+		{
+		
+				System.out.println("\n Player one enter a WORD: ");
+				word = scan.nextLine();
+				System.out.println("\n Player one enter a HINT: ");
+				hint = scan.nextLine();
+		}
+		else if(t == 2)
+		{
+			System.out.println("\n Player two enter a WORD: ");
 			word = scan.nextLine();
-			System.out.println("\n Player one enter a HINT: ");
+			System.out.println("\n Player two enter a HINT: ");
 			hint = scan.nextLine();
+		}
+	
 		
 	
 		
@@ -119,13 +143,46 @@ public class Main {
 			i++;
 		}
 		if(op == 0)
+		{
 			System.out.println("Game over You lose");
+			
+			if(t == 1)
+			{
+				p1points++;
+				t = 2;
+			}
+			
+			else if(t == 2)
+			{
+				p2points++;
+				t = 1;
+			}
+				
+		}
+		
 		if(win == true)
+		{
 			System.out.println("Game over You Win");
+			if(t == 1)
+			{
+				p2points++;
+				t = 2;
+			}
+				
+			else if(t == 2)
+			{
+				p1points++;
+				t = 1;
+			}
+			
+		}
+			
 		
 		System.out.println("All letters you enter: ");
 		for(int x = 0; x<letters.length; x++)
 			System.out.print(" [ " + letters[x] + " ]");
+		scan.nextLine();
+	}
 	}
 	
 	//Excercise 6
@@ -161,7 +218,7 @@ public class Main {
 		System.out.println("Referee Please insert your second number: ");
 		num2  = scan.nextInt();
 		
-		System.out.println("Player 1: ");
+		System.out.println("\n Player 1: ");
 		for(int i = 0; i<4; i++)
 		{
 		
@@ -171,7 +228,7 @@ public class Main {
 				System.out.print(" [ "+p1[i]+" ]");
 			}
 		}
-			System.out.println("Player 2: ");
+			System.out.println("\n Player 2: ");
 			for(int i = 0; i<4; i++)
 			{
 			if((p2[i] < num1 && p2[i] > num2) || (p2[i] > num1 && p2[i] < num2))
@@ -180,7 +237,7 @@ public class Main {
 				System.out.print(" [ "+p2[i]+" ]");
 			}
 			}
-			System.out.println("Player 3: ");
+			System.out.println("\n Player 3: ");
 			for(int i = 0; i<4; i++)
 			{
 			if((p3[i] <= num1 && p3[i] >= num2) || (p3[i] >= num1 && p3[i] <= num2))
