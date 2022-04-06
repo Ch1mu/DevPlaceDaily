@@ -74,6 +74,7 @@ public class Main {
 		char letters[] = new char[20];
 		boolean win = false, flag = false;
 		int p1points = 0, p2points = 0;
+		
 		int t = 1
 				;
 		
@@ -90,6 +91,9 @@ public class Main {
 		
 		while(p1points < 3 || p2points<3)
 		{
+			op = 6;
+			trys = 0;
+			win = false;
 			
 			
 		
@@ -100,6 +104,8 @@ public class Main {
 				word = scan.nextLine();
 				System.out.println("\n Player one enter a HINT: ");
 				hint = scan.nextLine();
+			
+			
 		}
 		else if(t == 2)
 		{
@@ -107,6 +113,8 @@ public class Main {
 			word = scan.nextLine();
 			System.out.println("\n Player two enter a HINT: ");
 			hint = scan.nextLine();
+		
+			
 		}
 	
 		
@@ -144,7 +152,7 @@ public class Main {
 		}
 		if(op == 0)
 		{
-			System.out.println("Game over You lose");
+			System.out.println("Game over You lose the word was: " + word);
 			
 			if(t == 1)
 			{
@@ -162,7 +170,7 @@ public class Main {
 		
 		if(win == true)
 		{
-			System.out.println("Game over You Win");
+			System.out.println("Game over You Win the word was: " + word);
 			if(t == 1)
 			{
 				p2points++;
