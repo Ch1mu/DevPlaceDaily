@@ -32,6 +32,7 @@ public void accelerate(double acc) throws TooFastException
 			}
 		}
 		else
+			
 			super.accelerate(acc);
 	}
 
