@@ -6,8 +6,9 @@ public class Penguin extends Animal
 	private int ownId;
 	public Penguin() {
 		super("Bird", "Carnivore ", "Penguin");
-	ownId = id;
 		id++;
+	ownId = id;
+	
 	}
 	@Override
 	public String toString() {

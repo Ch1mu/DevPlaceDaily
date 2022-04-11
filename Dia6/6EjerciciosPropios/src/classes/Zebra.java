@@ -5,8 +5,9 @@ public static int id;
 private int ownId;
 	public Zebra() {
 		super("Mammal", "Herbivore", "Zebra");
+		id++;
 		ownId = id;
-	id++;
+
 	}
 	@Override
 	public String toString() {

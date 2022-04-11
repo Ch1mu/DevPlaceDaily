@@ -9,6 +9,7 @@ import payment.*;
 public class Menu {
 
 	public static void menu(Zoo zoo) {
+		
 		Scanner scan = new Scanner(System.in);
 		int option, payOption, strategy;
 		boolean flag = false;
@@ -17,15 +18,16 @@ public class Menu {
 		
 		System.out.println("Before you enter to the zoo you need to pay $10 entrance");
 		System.out.println("Do you want to pay for it? ");
-		System.out.println("1- Yes \n 2- No ");
+		System.out.println(" 1- Yes \n 2- No ");
 		System.out.print("option: ");
 		payOption = scan.nextInt();
+		System.out.println("\n");
 		switch(payOption)
 		{
 		case 1:
 				System.out.println("Which method do you want to pay with");
 				System.out.println(" If you pay with effective you have 10% disccount");
-				System.out.println("1- Effective \n 2- Debit Card ");
+				System.out.println(" 1- Effective \n 2- Debit Card ");
 				System.out.print("option: ");
 				strategy = scan.nextInt();
 				
@@ -33,11 +35,13 @@ public class Menu {
 				{
 				case 1: 
 				strat = new Effective();
-				pay = strat.pay();
+				strat.pay();
+				pay = strat.getVerif();
 				break;
 				case 2:
 					strat = new Debit();
-					pay = strat.pay();
+					strat.pay();
+					pay = strat.getVerif();
 					break;
 				}
 				
@@ -69,7 +73,7 @@ public class Menu {
 			System.out.print("option: "); 
 			op1 = scan.nextInt(); 
 			zoo.addAnimalToEnclosure(AnimalFactory.addAnimal(op1)); 
-			
+			System.out.println("\n");
 			break;
 		case 2:
 			System.out.println("1- Lions");
@@ -82,6 +86,7 @@ public class Menu {
 			
 			zoo.getEnclosures().getElement(op1-1).randomClean(); //Makes it dirty
 			
+			System.out.println("\n");
 		System.out.println(zoo.getEnclosures().getElement((op1-1)).getAnimals().toString());
 		
 		break;
@@ -94,6 +99,7 @@ public class Menu {
 			System.out.println("4- Penguins");
 			System.out.print("option: "); 
 			op1 = scan.nextInt(); 
+			System.out.println("\n");
 			System.out.println(zoo.getEnclosures().getElement(op1-1).isClean());
 			if(zoo.getEnclosures().getElement(op1-1).isClean().equals("Dirty"))
 			{
@@ -114,10 +120,12 @@ public class Menu {
 			break;
 		case 4:
 			flag = true;
+			break;
 			default:
 				System.out.println("Invalid Option");
 				break;
 		}
+	System.out.println("\n");
 		}
 		
 		

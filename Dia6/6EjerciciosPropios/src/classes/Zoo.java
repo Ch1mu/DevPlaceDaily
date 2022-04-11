@@ -2,8 +2,10 @@ package classes;
 
 public class Zoo { //SINGLETON
 private static  Zoo myInstance;
+
 private GenArray<Enclosure>enclosures;
-private GenArray<Employee>employees;
+private GenArray<Employee>employees; //Not used
+
 private Zoo()
 {
 	enclosures = new GenArray<Enclosure>();

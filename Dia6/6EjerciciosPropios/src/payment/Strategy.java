@@ -2,6 +2,7 @@ package payment;
 
 public interface Strategy {
 
-	public boolean pay();
+	public void pay();
+	public boolean getVerif();
 
 }

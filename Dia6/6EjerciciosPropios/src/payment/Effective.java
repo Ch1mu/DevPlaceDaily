@@ -1,14 +1,19 @@
 package payment;
 
 public class Effective implements Strategy{
+	private boolean verif = false;
 public Effective()
 {
 	
 }
-	public boolean  pay() {
+	public void  pay() {
 		
 		System.out.println("Total: $" + 10*0.9);
-		return true;
+		verif = true;
+	}
+	public boolean getVerif()
+	{
+		return verif;
 	}
 
 }
