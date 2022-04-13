@@ -323,9 +323,17 @@ public class dbController {
         	{
         		 
      	   String sql = "Update personInfo  "
-     	   		+ "SET firstname = " + firstName + ", lastname = " + lastname + ", dni = " +dni +", Address = " + Address + "birth = " + date
-     	   		+ "where idPerson = " +idPerson +";";
+     	   		+ "SET firstname = ?, lastname = ?, dni = ?, Address = ? ,birth = ?" 
+     	   		+ "where idPerson =?;";
    		   PreparedStatement stmtt =  con.prepareStatement(sql);
+   		   
+   		   stmtt.setString(1, firstName);
+   		   stmtt.setString(2, lastname);
+   		   stmtt.setString(3, dni);
+   		   stmtt.setString(4, Address);
+   		   stmtt.setDate(5, date);
+   		   stmtt.setInt(6, idPerson);
+   		   
    		   stmtt.executeUpdate();
    	
   
@@ -345,12 +353,16 @@ public class dbController {
         	{
         		 
      	   String sql = "Update Products  "
-     	   		+ "SET price = " + price + ", ammount = " + ammount + ", minStock = " +minStock 
-     	   		+ "where idProduct = " +idProduct +";";
+     	   		+ "SET price = ?, ammount = ?, minStock = ?" 
+     	   		+ "where idProduct = ?;";
    		   PreparedStatement stmtt =  con.prepareStatement(sql);
-   		   stmtt.executeUpdate();
+   		
+   		   stmtt.setDouble(1, idProduct);
+   		   stmtt.setInt(2, ammount);
+   		 stmtt.setInt(3, minStock);
+   		 stmtt.setInt(4, idProduct);
    	
-  
+   	   stmtt.executeUpdate();
    		
    	stmtt.close();
    		}
@@ -368,9 +380,14 @@ public class dbController {
         	{
         		 
      	   String sql = "Update Billings  "
-     	   		+ "SET datesql = " + datesql + ", idClient = " + idClient + ", idVendor = " +idVendor + ", idProd= " + idProd 
-     	   		+ "where idBilling = " +idBilling +";";
+     	   		+ "SET datesql =  ? , idClient = ?  , idVendor = =  , idProd= ?"  
+     	   		+ "where idBilling = ?;";
    		   PreparedStatement stmtt =  con.prepareStatement(sql);
+   		   stmtt.setDate(1, datesql);
+   		   stmtt.setInt(2, idClient);
+   		   stmtt.setInt(3, idVendor);
+   		   stmtt.setInt(4, idProd);
+   		 stmtt.setInt(5, idBilling);
    		   stmtt.executeUpdate();
    	
   
@@ -381,6 +398,8 @@ public class dbController {
    		  e.printStackTrace();
    		}
         }
+
+	
 
     
 }
