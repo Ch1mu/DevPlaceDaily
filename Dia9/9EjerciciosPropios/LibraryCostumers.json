@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "62587104fb2eddeb87852bcf"
+  },
+  "Customer": {
+    "id": 1,
+    "Age": 23,
+    "Name": "Carlitos",
+    "Gender": "Male",
+    "dni": "123456789",
+    "Books": [
+      {
+        "id": 1,
+        "Title": "Moby Dick"
+      },
+      {
+        "id": 2,
+        "Title": "Harry Potter 2"
+      }
+    ],
+    "Tags": [
+      "Action",
+      "Mistery",
+      "Romance"
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "62587181fb2eddeb87852bd1"
+  },
+  "Customer": {
+    "id": 2,
+    "Age": 18,
+    "Name": "Jeremias",
+    "Gender": "Male",
+    "dni": "18273128",
+    "Books": [
+      {
+        "id": 4,
+        "Title": "Harry Potter 4"
+      },
+      {
+        "id": 5,
+        "Title": "Harry Potter 5"
+      }
+    ],
+    "Tags": [
+      "Action",
+      "Mistery",
+      "Fantasy",
+      "Science Fiction"
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "62587bb68931f1712ef0deba"
+  },
+  "Customer": {
+    "id": 3,
+    "Age": 19,
+    "Name": "Franco",
+    "Gender": "Male",
+    "dni": "24124",
+    "Books": [
+      {
+        "id": 4,
+        "Title": "Harry Potter 4"
+      },
+      {
+        "id": 5,
+        "Title": "Harry Potter 5"
+      }
+    ],
+    "Tags": [
+      "Action",
+      "Mistery",
+      "Fantasy",
+      "Science Fiction"
+    ]
+  }
+}]

@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "62587217fb2eddeb87852bd5"
+  },
+  "Book": {
+    "id": 1,
+    "title": "Moby Dick",
+    "isbn": 1231,
+    "Author": "Herman Melville",
+    "Available": true
+  }
+},{
+  "_id": {
+    "$oid": "6258729afb2eddeb87852bd6"
+  },
+  "Book": {
+    "id": 2,
+    "title": "Harry Potter 2",
+    "isbn": 1231,
+    "Author": "J.K Rowling",
+    "Available": true
+  }
+},{
+  "_id": {
+    "$oid": "62587315fb2eddeb87852bdf"
+  },
+  "Book": {
+    "id": 3,
+    "title": "Percy Jackson 1",
+    "isbn": 1232461,
+    "Author": "Rick Riordan",
+    "Available": true
+  }
+},{
+  "_id": {
+    "$oid": "625873affb2eddeb87852be0"
+  },
+  "Book": {
+    "id": 4,
+    "title": "Harry Potter 4",
+    "isbn": 123126231,
+    "Author": "J.K Rowling",
+    "Available": true
+  }
+},{
+  "_id": {
+    "$oid": "625873c6fb2eddeb87852be2"
+  },
+  "Book": {
+    "id": 5,
+    "title": "Harry Potter 5",
+    "isbn": 232461,
+    "Author": "J.K Rowling",
+    "Available": true
+  }
+},{
+  "_id": {
+    "$oid": "6258841b8931f1712ef0debb"
+  },
+  "Book": {
+    "id": 5,
+    "title": "Harry Potter 5",
+    "isbn": 232461,
+    "Author": "J.K Rowling",
+    "Available": true
+  }
+}]
