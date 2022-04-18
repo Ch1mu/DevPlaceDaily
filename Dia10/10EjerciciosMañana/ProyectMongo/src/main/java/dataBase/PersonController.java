@@ -23,9 +23,20 @@ public PersonController()
 public void insertPerson(Person person)
 {
 	
+if(!personExists(person.getDni()))
 	persons.insertOne(new Document("FirstName", person.getFirstname()).append("LastName", person.getLastname()).append("DNI", person.getDni()).append("Address", person.getAddress()));
+else
+	System.out.println("There is already a person with that DNI");
 }
 
+public boolean personExists(String dni)
+{
+	FindIterable<Document> personD = persons.find().filter(new Document("DNI", dni));
+	if(personD.first() == null)
+			return false;
+	else
+		return true;
+}
 public void getPersons()
 {
 	MongoCursor<Document> pIterator = persons.find().iterator();
@@ -39,6 +50,7 @@ public void getPersonDni(String Dni)
 	FindIterable<Document> personD = persons.find().filter(new Document("DNI", Dni));
 	
 if(personD.first() != null)
+
 		System.out.println(personD.first().toJson());
 
 
