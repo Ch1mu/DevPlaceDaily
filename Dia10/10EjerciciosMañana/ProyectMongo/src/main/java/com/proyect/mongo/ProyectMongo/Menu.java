@@ -14,6 +14,7 @@ public Menu()
 }
 public static void menu()
 {
+	PersonController pc = new PersonController();
 	Scanner scan = new Scanner(System.in);
 	int option;
 	boolean flag = true;
@@ -29,7 +30,7 @@ public static void menu()
 		switch(option) {
 	
 		case 1:
-			PersonController pc = new PersonController();
+
 			Person person = new Person();
 			
 			System.out.println("First Name: ");
@@ -45,26 +46,26 @@ public static void menu()
 			pc.insertPerson(person);
 			break;
 		case 2:
-			PersonController pc2 = new PersonController();
+	
 		System.out.println("Enter Dni: ");
 		scan.nextLine();
 		
-		pc2.getPersonDni(scan.nextLine());
+		pc.getPersonDni(scan.nextLine());
 		
 			break;
 		case 3:
-			PersonController pc3 = new PersonController();
+
 		
 			System.out.println("Enter DNI: ");
 			scan.nextLine();
 			
-			pc3.deletePerson(scan.nextLine());
+			pc.deletePerson(scan.nextLine());
 			
 			break;
 		case 4:
-			PersonController pc4 = new PersonController();
+	
 			
-			pc4.getPersons();
+			pc.getPersons();
 			
 			break;
 		case 5: flag = false;
