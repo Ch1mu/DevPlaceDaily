@@ -16,6 +16,7 @@ public class Connect {
 	private List<Document> database;
 	
 	public Connect(String db){
+		
 	 mongoClient = MongoClients.create();
 	 database = mongoClient.listDatabases().into(new ArrayList<Document>());
 	//	database.forEach(db-> System.out.println(db.toJson()));

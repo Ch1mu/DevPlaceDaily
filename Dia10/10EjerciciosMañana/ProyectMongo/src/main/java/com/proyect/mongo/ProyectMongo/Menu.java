@@ -41,24 +41,31 @@ public static void menu()
 			person.setDni(scan.nextLine());
 			System.out.println("Address: ");
 			person.setAddress(scan.nextLine());
+			
 			pc.insertPerson(person);
 			break;
 		case 2:
 			PersonController pc2 = new PersonController();
 		System.out.println("Enter Dni: ");
 		scan.nextLine();
+		
 		pc2.getPersonDni(scan.nextLine());
+		
 			break;
 		case 3:
 			PersonController pc3 = new PersonController();
 		
 			System.out.println("Enter DNI: ");
 			scan.nextLine();
+			
 			pc3.deletePerson(scan.nextLine());
+			
 			break;
 		case 4:
 			PersonController pc4 = new PersonController();
+			
 			pc4.getPersons();
+			
 			break;
 		case 5: flag = false;
 		break;
