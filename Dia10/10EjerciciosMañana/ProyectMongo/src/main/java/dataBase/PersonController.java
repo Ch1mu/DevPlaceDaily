@@ -15,7 +15,7 @@ MongoDatabase mdb;
 MongoCollection <Document> persons; 
 public PersonController()
 {
-	connection = new Connect();
+	connection = new Connect("Dia10DevPlace");
 	mdb = connection.getDb();
 	 persons = mdb.getCollection("Person");
 }
