@@ -1,0 +1,65 @@
+package Dia12.EjerciciosPropios12.Controllers;
+
+import Dia12.EjerciciosPropios12.Models.Person;
+import Dia12.EjerciciosPropios12.Services.PersonService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+
+
+@RestController
+@CrossOrigin
+@RequestMapping("/persons")
+
+public class PersonController {
+
+    @Autowired
+    PersonService pService;
+
+    //GET ALL PERSONS
+    @GetMapping()
+    public ArrayList<Person> getAllPersons()
+    {
+        return pService.getPersons();
+    }
+
+    //SAVE PERSON
+    @PostMapping()
+    public Person savePerson(@RequestBody Person person)
+    {
+        return this.pService.savePerson(person);
+    }
+
+    //FIND BY DNI
+    @GetMapping(path = "/findDni")
+    public ArrayList<Person> getPersonByDni(@RequestParam("dni") String dni)
+    {
+        return pService.findByDni(dni);
+    }
+
+    // HAS VOTED?
+    @GetMapping(path = "/findVoted")
+    public ArrayList<Person> getVoted(@RequestParam("voted") boolean voted)
+    {
+        return pService.findPersonByVoted(voted);
+    }
+
+    //DELETE PERSON BY ID
+    @DeleteMapping (path = "/{id}")
+    public String deletePersonById(@PathVariable("id") Long id)
+    {
+        boolean ok = this.pService.deleteById(id);
+
+        if(ok)
+        {
+            return "DELETE: " + id;
+        }
+        else
+        {
+            return "COULDN'T DELETE" + id;
+        }
+    }
+
+}
