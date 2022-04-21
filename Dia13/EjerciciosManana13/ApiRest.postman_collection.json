@@ -31,9 +31,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{ur}}",
+					"raw": "{{ur}}/2",
 					"host": [
 						"{{ur}}"
+					],
+					"path": [
+						"2"
 					]
 				}
 			},
@@ -77,12 +80,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{ur}}/1",
+					"raw": "{{ur}}/2",
 					"host": [
 						"{{ur}}"
 					],
 					"path": [
-						"1"
+						"2"
 					]
 				}
 			},
@@ -92,7 +95,16 @@
 			"name": "DeleteUser",
 			"request": {
 				"method": "DELETE",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "{{ur}}/2",
+					"host": [
+						"{{ur}}"
+					],
+					"path": [
+						"2"
+					]
+				}
 			},
 			"response": []
 		}
