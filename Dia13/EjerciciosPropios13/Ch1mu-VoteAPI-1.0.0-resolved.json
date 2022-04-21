@@ -1,0 +1,385 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Elections System Vote API",
+    "description": "2023 Elections Vote System",
+    "contact": {
+      "email": "Government@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/Ch1mu/VoteAPI/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Persons",
+      "description": "Persons End Points"
+    },
+    {
+      "name": "Places",
+      "description": "Places End Points"
+    }
+  ],
+  "paths": {
+    "/persons": {
+      "get": {
+        "tags": [
+          "Persons"
+        ],
+        "summary": "Get All Persons",
+        "description": "By accesing the root directory, get all persons in the database\n",
+        "operationId": "getAllPersons",
+        "responses": {
+          "200": {
+            "description": "search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Person"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Persons"
+        ],
+        "summary": "Add a person to the Data Base",
+        "description": "By accesing the root directory, (METHOD POST) send a person to the data base\n",
+        "operationId": "savePerson",
+        "requestBody": {
+          "description": "Person to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Person"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Person created"
+          },
+          "400": {
+            "description": "invalid input"
+          }
+        }
+      }
+    },
+    "/persons/findDni": {
+      "get": {
+        "tags": [
+          "Persons"
+        ],
+        "summary": "Get Person by Dni",
+        "description": "By Specified directory, get the person with the matching dni\n",
+        "operationId": "getPersonByDni",
+        "parameters": [
+          {
+            "name": "dni",
+            "in": "query",
+            "description": "dni",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Person"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/persons/findVoted": {
+      "get": {
+        "tags": [
+          "Persons"
+        ],
+        "summary": "get person by voted status",
+        "description": "Get Person by if has or not voted\n",
+        "operationId": "getVoted",
+        "parameters": [
+          {
+            "name": "voted",
+            "in": "query",
+            "description": "voted",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Person"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      }
+    },
+    "/persons/{id}": {
+      "delete": {
+        "tags": [
+          "Persons"
+        ],
+        "summary": "Deletes a Person",
+        "operationId": "deletePersonById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Person id to delete",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Person not found"
+          }
+        }
+      }
+    },
+    "/places": {
+      "get": {
+        "tags": [
+          "Places"
+        ],
+        "summary": "Get All Places",
+        "description": "By accesing the root directory, get all Places in the database\n",
+        "operationId": "getAllPlaces",
+        "responses": {
+          "200": {
+            "description": "search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Place"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Places"
+        ],
+        "summary": "Add a Place to the Data Base",
+        "description": "By accesing the root directory, (METHOD POST) send a Place to the data base\n",
+        "operationId": "savePlace",
+        "requestBody": {
+          "description": "Place to add",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Place"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Place created"
+          },
+          "400": {
+            "description": "invalid input"
+          }
+        }
+      }
+    },
+    "/places/{id}": {
+      "get": {
+        "tags": [
+          "Places"
+        ],
+        "summary": "Get Place by ID",
+        "description": "By Specified directory, get the Place with the matching ID\n",
+        "operationId": "getPlaceById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Place"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Places"
+        ],
+        "summary": "Deletes a Place",
+        "operationId": "deletePlaceById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Place id to delete",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Place not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Person": {
+        "required": [
+          "address",
+          "dni",
+          "firstName",
+          "id",
+          "lastName",
+          "place",
+          "voted"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "uuid",
+            "example": 1
+          },
+          "firstName": {
+            "type": "string",
+            "example": "Franco"
+          },
+          "lastName": {
+            "type": "string",
+            "example": "Bragadini"
+          },
+          "place": {
+            "type": "integer",
+            "example": 1
+          },
+          "address": {
+            "type": "string",
+            "example": "Constitucion 7147"
+          },
+          "dni": {
+            "type": "string",
+            "example": "123456789"
+          },
+          "voted": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "Place": {
+        "required": [
+          "address",
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "address": {
+            "type": "string",
+            "example": "Avenida Tejedor 410"
+          }
+        }
+      }
+    }
+  }
+}
