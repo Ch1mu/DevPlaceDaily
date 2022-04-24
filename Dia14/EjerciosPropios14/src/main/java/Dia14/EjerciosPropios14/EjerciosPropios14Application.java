@@ -5,6 +5,7 @@ import Dia14.EjerciosPropios14.Adapters.CartAdapter;
 import Dia14.EjerciosPropios14.Models.Cart;
 import Dia14.EjerciosPropios14.Models.Product;
 import Dia14.EjerciosPropios14.Models.User;
+import Dia14.EjerciosPropios14.Ports.CartPort;
 import Dia14.EjerciosPropios14.Ports.ProductPort;
 
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class EjerciosPropios14Application {
 	{
 		int op;
 		ProductPort pp = new ProductPort();
-		CartAdapter cp = new CartAdapter();
+		CartPort cp = new CartPort();
 
 		Scanner scan = new Scanner(System.in);
 		Cart cart = new Cart();

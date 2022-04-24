@@ -9,7 +9,7 @@ import kong.unirest.HttpResponse;
 public class CartPort {
     CartAdapter ca;
 
-    public void showProducts()
+    public void getCarts()
     {
         HttpResponse<String> products= ca.getCarts();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
