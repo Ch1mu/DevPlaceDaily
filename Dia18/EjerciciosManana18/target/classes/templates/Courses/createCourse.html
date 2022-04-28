@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Create Course</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class ="container">
+    <form th:acction="@{courses/create}" th:object="${course}" method="post">
+
+        <label>name: </label>
+        <input type="text" name="name" th:field="*{name}"/>
+        <br>
+
+        <button type="submit">
+            Create Course
+        </button>
+        <br>
+    </form>
+    <a th:href="@{/courses}">Go back</a>
+</div>
+</body>
+</html>

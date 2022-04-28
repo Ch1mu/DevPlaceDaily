@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>edit Course</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class ="container">
+    <form th:acction="@{courses/update/{id}(id = course.id)}" th:object="${course}" method="post">
+        <label>Id: </label>
+        <input name="id" th:field="*{id}" />
+        <br>
+        <label>firstname: </label>
+        <input type="text" name="name" th:field="*{name}"/>
+        <br>
+        <button type="submit">
+            Update User
+        </button>
+        <br>
+    </form>
+    <a th:href="@{/courses}">Go back</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Users</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<br><br>
+
+
+
+<div class = "container">
+    <button class="btn btn-dark" > <a th:href="@{users/create}"> Create User</a> </button>
+    <button class="btn btn-dark" > <a th:href="@{/courses}"> Go to Courses</a> </button>
+<table class ="table table-hover">
+
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> FirstName </th>
+        <th> LastName </th>
+        <th> Email </th>
+        <th> Password </th>
+        <th> Actions </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user: ${users}">
+        <td th:text = ${user.id}></td>
+        <td th:text = ${user.firstName}></td>
+        <td th:text = ${user.lastName}></td>
+        <td th:text = ${user.email}></td>
+        <td th:text = ${user.password}></td>
+      <td>
+          <button class="btn btn-dark" > <a th:href="@{users/update/{id} (id = ${user.id})}"> Edit </a> </button>
+          <button class="btn btn-dark" > <a  th:href ="@{users/delete/{id} (id = ${user.id})} "> Delete </a> </button>
+
+          </td>
+    </tr>
+    </tbody>
+</table>
+
+</div>
+</body>
+</html>

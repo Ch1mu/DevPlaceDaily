@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Users</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class ="container">
+<form th:acction="@{users/create}" th:object="${user}" method="post">
+
+    <label>FirstName: </label>
+    <input type="text" name="firstName" th:field="*{firstName}"/>
+    <br>
+    <label>LastName: </label>
+    <input type="text" name="lastName" th:field="*{lastName}"/>
+    <br>
+
+    <label>Email: </label>
+    <input type="text" name="email" th:field="*{email}"/>
+    <br>
+    <label>Password: </label>
+    <input type="password" name="password" th:field="*{password}"/>
+    <button type="submit">
+        Create user
+    </button>
+    <br>
+</form>
+<a th:href="@{/users}">Go back</a>
+</div>
+</body>
+</html>
