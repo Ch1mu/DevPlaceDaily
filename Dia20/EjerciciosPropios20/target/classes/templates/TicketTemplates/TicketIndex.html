@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts}">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<section th:insert="Layouts/Nav::nav"></section>
+
+<br> <br>
+<div class = "container">
+<div style="text-align: center">
+<h1 >YOUR TICKET</h1><br><br>
+  <h3>ID:  </h3><h4 th:text="${ticket.id}" ></h4><br>
+  <h3>GAME ID:  </h3><h4 th:text="${ticket.gameId}" ></h4><br>
+  <h3>DATE:  </h3><h4 th:text="${ticket.date}" ></h4><br>
+
+</div>
+</div>
+
+<section th:insert="Layouts/Footer::footer"></section>
+
+</body>
+</html>

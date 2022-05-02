@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts}">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Game</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<section th:insert="Layouts/Nav::nav"></section>
+<br><br><br><br>
+<div class ="container">
+    <div style="text-align: center">
+    <form th:action="@{save}" th:object="${game}" method="post">
+
+        <label>Name: </label>
+        <input type="text" name="name" th:field="*{name}"/>
+        <br>
+        <label>Description: </label>
+        <input type="text" name="description" th:field="*{description}"/>
+        <br>
+        <label>Price: </label>
+        <input type="number" step="0.01" name="price" th:field="*{price}"/>
+        <br>
+        <button type="submit">
+            Add Game
+        </button>
+        <br>
+    </form>
+    </div>
+</div>
+<section th:insert="Layouts/Footer::footer"></section>
+</body>
+</html>
