@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Create register</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+	<section th:insert="Layouts/Layouts::nav"></section>
+	<div class="container">
+		<form th:acction="@{/register/create}" th:object="${registerRequest}" method="post">
+			<label>Code subject: </label>
+			<input class="form-control" type="number" th:field="*{codeSubject}"/>
+			<br>
+			<label>Dni student: </label>
+			<input class="form-control" type="number" th:field="*{dniStudent}"/>
+			<br>
+			<button class="btn btn-light" type="submit">
+				Create
+			</button>
+		</form>
+		<a th:href="@{/register}">Go back</a>
+	</div>
+	</body>
+</html>
