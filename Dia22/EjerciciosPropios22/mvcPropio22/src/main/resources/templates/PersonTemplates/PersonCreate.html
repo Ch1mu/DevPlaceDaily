@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts}">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a Vehicle</title>
+
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<section th:insert="Layouts/Layouts::nav"></section>
+
+<br><br><br><br>
+<div class ="container">
+  <div style="text-align: center">
+    <form th:action="@{save}" th:object="${person}" method="post">
+      <div class="form-group">
+        <label>First Name: </label>
+        <input class="form-control" type="text" name="firstName" th:field="*{firstName}"/>
+        <br>
+        <label>Last Name: </label>
+        <input class="form-control" type="text" name="lastName" th:field="*{lastName}"/>
+        <br>
+        <label>DNI: </label>
+        <input class="form-control" type="text"  name="dni" th:field="*{dni}"/>
+        <br>
+        <label>Address: </label>
+        <input class="form-control" type="text"  name="address" th:field="*{address}"/>
+        <br>
+        <label>Place: </label>
+        <input class="form-control" type="text"  name="place" th:field="*{place}"/>
+        <br>
+        <br>
+      </div>
+      <button class="btn btn-light" type="submit">
+        Add Person
+      </button>
+      <br>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE" ></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+
+<header th:fragment="nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/persons}">Persons</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/persons/save}">Add Persons</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/persons/filter}">Filter By DNI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/places}">Places</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/persons/add}">Add Places</a>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+
+</body>
+</html>

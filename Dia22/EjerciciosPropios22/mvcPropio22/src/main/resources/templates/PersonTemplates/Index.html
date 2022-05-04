@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts}">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicles</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<section th:insert="Layouts/Layouts::nav"></section>
+
+<br> <br>
+<div class = "container">
+    <h1 style="text-align: center">Persons</h1>
+    <br>
+
+    <table class ="table table-hover">
+
+        <thead>
+        <tr>
+            <th> </th>
+            <th> ID </th>
+            <th> First Name </th>
+            <th> Last Name </th>
+            <th> DNI </th>
+            <th> Address </th>
+            <th> Place </th>
+            <th> Voted </th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person: ${persons}">
+            <td> </td>
+            <td th:text = ${person.id}></td>
+            <td th:text = ${person.firstName}></td>
+            <td th:text = ${person.lastName}></td>
+            <td th:text = ${person.dni}></td>
+            <td th:text = ${person.address}></td>
+            <td th:text = ${person.place}></td>
+            <td th:text = ${person.voted}></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+
+    <span th:if="${avg} != null"><h5>Average: <span th:text = ${avg}></span></h5></span>
+</div>
+
+</body>
+</html>
