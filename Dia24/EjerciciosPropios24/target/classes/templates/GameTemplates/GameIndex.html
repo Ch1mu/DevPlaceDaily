@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts}">
+<head>
+    <meta charset="UTF-8">
+    <title>Steam</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<section th:insert="Layouts/Nav::nav"></section>
+
+<br> <br>
+<div class = "container">
+        <h1 style="text-align: center">STEAM STORE</h1>
+    <table class ="table table-hover">
+
+        <thead>
+        <tr>
+            <th> </th>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Description </th>
+            <th> Price </th>
+            <th> Action </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="game: ${games}">
+            <td> </td>
+            <td th:text = ${game.id}></td>
+            <td th:text = ${game.name}></td>
+            <td th:text = ${game.description}></td>
+            <td th:text = ${game.price}></td>
+            <td>
+            <button class="btn btn-light" > <a th:href="@{/ticket/create/{id} (id = ${game.id})}"> Buy </a> </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<section th:insert="Layouts/Footer::footer"></section>
+</body>
+</html>
