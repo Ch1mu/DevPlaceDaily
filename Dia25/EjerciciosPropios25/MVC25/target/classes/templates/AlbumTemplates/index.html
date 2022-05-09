@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts}">
+<head>
+    <meta charset="UTF-8">
+    <title>Steam</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+
+
+
+<br> <br>
+<div class = "container">
+    <h1 style="text-align: center">STEAM STORE</h1>
+    <table class ="table table-hover">
+
+        <thead>
+        <tr>
+
+            <th> ID </th>
+            <th> Title </th>
+            <th> Action </th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="album: ${albums}">
+            <td th:text = ${album.id}></td>
+            <td th:text = ${album.title}></td>
+            <td><a th:href="@{/songs/{id} ( id = ${album.id} ) }">View Songs</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
