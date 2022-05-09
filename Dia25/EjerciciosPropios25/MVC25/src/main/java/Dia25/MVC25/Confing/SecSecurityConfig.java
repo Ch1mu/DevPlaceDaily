@@ -31,10 +31,7 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
 
-       /*auth.inMemoryAuthentication()
-                .withUser("user").password(passwordEncoder().encode("123")).roles("USER")
-                .and()
-                .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN"); */
+
         auth.userDetailsService(uS).passwordEncoder(passwordEncoder());
 
     }
@@ -61,17 +58,6 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutUrl("/perform_logout")
                 .deleteCookies("JSESSIONID");
 
-      /*  http
-                .authorizeRequests()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .httpBasic()
-                .and()
-                .logout()
-                .logoutUrl("/perform_logout")
-                .permitAll();
-*/
 
 
 
