@@ -22,8 +22,10 @@ public class RolesService {
         uR.save(user);
     }
 
-    public boolean isAdmin(long id) {
-        if (uS.getById(id).getRole() == 3)
+    public boolean isPremium(long id) {
+
+
+        if (uR.getById( uS.getById(id).getRole() ).getDescription().equals("PREMIUM"))
         {
             return  true;
         }
@@ -33,6 +35,7 @@ public class RolesService {
         }
 
     }
+
     public List<Roles> getAll()
     {
         return uR.findAll();
