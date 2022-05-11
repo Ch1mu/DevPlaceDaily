@@ -20,8 +20,7 @@ public class Product {
     private int stock;
 
 
-    @OneToMany(mappedBy = "prod")
-    List<Ticket> tickets;
+
 
     public Product(long code)
     {

@@ -14,6 +14,7 @@ public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long nTicket;
+
     private int ammountProducts;
 
     @ManyToOne

@@ -20,8 +20,7 @@ public class Client {
     private String fName;
     private String lName;
 
-    @OneToMany(mappedBy = "client")
-    List<Ticket> tickets;
+
 
     public Client(String dni)
     {
